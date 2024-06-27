@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    --background:#211b1b ;
+    --border-color:#d5d5d5;
+    --gray:#656563;
+    --color-hover:#f5f51d;
+    background: var(--background);
+}
+
+.slideshow{
+    margin: 0 auto;
+    max-width: 1000px;
+    height: 600px;
+    overflow: hidden;
+    border: 3px var(--border-color) solid; 
+}
+
+.show{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.nav{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    
+}
+.nav__nav{
+    width: 20px;
+    height: 20px;
+    border: 3px var(--border-color) solid;
+    margin-left: 10px;
+    background-color: var(--gray);
+    cursor: pointer;
+    transition: all .4s;
+}
+.nav__nav:hover{
+    background: var(--color-hover);
+}
+input[name="btn"]{
+    position: absolute;
+    visibility: hidden;
+}
+.slides{
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+}
+.slide{
+    min-width: 100%;
+    transition: all .8s;
+}
+.slide img{
+    width: 100%;
+    height: 100%;
+}
+
+#btn1:checked ~ .photo-1{
+    margin-left: 0;
+}
+#btn2:checked ~ .photo-2{
+    margin-left: -100%;
+}
+#btn3:checked ~ .photo-3{
+    margin-left:-200% ;
+}
+#btn4:checked ~ .photo-4{
+    margin-left:-300% ;
+}
+#btn5:checked ~ .photo-5{
+    margin-left:-400% ;
+}
